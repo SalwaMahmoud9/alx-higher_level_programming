@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 "class Node"
 
+
 class Node:
     "class Node"
 
@@ -38,9 +39,11 @@ class SinglyLinkedList:
     "class SinglyLinkedList"
 
     def __init__(self):
+        "init"
         self.__head = None
 
     def sorted_insert(self, value):
+        "sorted_insert"
         new = Node(value)
         if self.__head is None:
             new.next_node = None
@@ -57,6 +60,7 @@ class SinglyLinkedList:
             tmp.next_node = new
 
     def __str__(self):
+        "str"
         values = []
         tmp = self.__head
         while tmp is not None:
