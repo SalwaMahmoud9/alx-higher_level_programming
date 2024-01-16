@@ -12,11 +12,11 @@ class Rectangle(Base):
         """Initialize Rectangle.
 
         Args:
-            width (int): width
-            height (int): height
-            x (int): x coordinate
-            y (int): y coordinate
-            id (int): id
+            width (int): width.
+            height (int): height.
+            x (int): x coordinate.
+            y (int): y coordinate.
+            id (int): id.
         Raises:
             TypeError: If width or height is not int.
             ValueError: If width or height less than or equal 0.
@@ -31,7 +31,7 @@ class Rectangle(Base):
 
     @property
     def width(self):
-        """Set/get width"""
+        """Set/get width."""
         return self.__width
 
     @width.setter
@@ -44,7 +44,7 @@ class Rectangle(Base):
 
     @property
     def height(self):
-        """Set/get height"""
+        """Set/get height."""
         return self.__height
 
     @height.setter
@@ -57,7 +57,7 @@ class Rectangle(Base):
 
     @property
     def x(self):
-        """Set/get x coordinate"""
+        """Set/get x coordinate."""
         return self.__x
 
     @x.setter
@@ -70,7 +70,7 @@ class Rectangle(Base):
 
     @property
     def y(self):
-        """Set/get y coordinate"""
+        """Set/get y coordinate."""
         return self.__y
 
     @y.setter
@@ -102,12 +102,12 @@ class Rectangle(Base):
 
         Args:
             *args (ints): New attribute values.
-                - id attribute
-                - width attribute
-                - height attribute
-                - x attribute
-                - y attribute
-            **kwargs (dict): key/value pairs
+                - id attribute.
+                - width attribute.
+                - height attribute.
+                - x attribute.
+                - y attribute.
+            **kwargs (dict): key/value pairs.
         """
         if args and len(args) != 0:
             a = 0
@@ -144,7 +144,7 @@ class Rectangle(Base):
                     self.y = v
 
     def to_dictionary(self):
-        """to_dictionary"""
+        """to_dictionary."""
         return {
             "id": self.id,
             "width": self.width,
@@ -154,7 +154,7 @@ class Rectangle(Base):
         }
 
     def __str__(self):
-        """Return print() and str()"""
+        """Return print() and str()."""
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
                                                        self.x, self.y,
                                                        self.width, self.height)

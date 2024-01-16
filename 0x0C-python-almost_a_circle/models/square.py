@@ -12,16 +12,16 @@ class Square(Rectangle):
         """Initialize  Square.
 
         Args:
-            size (int): size
-            x (int): x coordinate
-            y (int): y coordinate
-            id (int): id
+            size (int): size.
+            x (int): x coordinate.
+            y (int): y coordinate.
+            id (int): id.
         """
         super().__init__(size, size, x, y, id)
 
     @property
     def size(self):
-        """Get/set size"""
+        """Get/set size."""
         return self.width
 
     @size.setter
@@ -34,11 +34,11 @@ class Square(Rectangle):
 
         Args:
             *args (ints): attribute values.
-                - id attribute
-                - size attribute
-                - x attribute
-                - y attribute
-            **kwargs (dict):  key/value pairs
+                - id attribute.
+                - size attribute.
+                - x attribute.
+                - y attribute.
+            **kwargs (dict):  key/value pairs.
         """
         if args and len(args) != 0:
             a = 0
@@ -71,7 +71,7 @@ class Square(Rectangle):
                     self.y = v
 
     def to_dictionary(self):
-        """to_dictionary"""
+        """to_dictionary."""
         return {
             "id": self.id,
             "size": self.width,
@@ -80,6 +80,6 @@ class Square(Rectangle):
         }
 
     def __str__(self):
-        """Return print() and str()"""
+        """Return print() and str()."""
         return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y,
                                                  self.width)
