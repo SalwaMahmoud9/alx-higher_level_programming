@@ -82,11 +82,11 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
-        """area"""
+        """area."""
         return self.width * self.height
 
     def display(self):
-        """display"""
+        """display."""
         if self.width == 0 or self.height == 0:
             print("")
             return
