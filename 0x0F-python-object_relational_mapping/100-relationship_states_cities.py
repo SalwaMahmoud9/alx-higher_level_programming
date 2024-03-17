@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+100
+"""
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker

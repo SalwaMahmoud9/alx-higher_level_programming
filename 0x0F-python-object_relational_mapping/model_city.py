@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+model city
+"""
 from sqlalchemy import Column, ForeignKey, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 
