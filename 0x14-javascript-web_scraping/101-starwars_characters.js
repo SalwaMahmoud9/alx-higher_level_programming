@@ -10,7 +10,7 @@ request.get(url, function (error, response, body) {
         request.get(ch, function (error, response, body) {
           if (error) {
             reject(error);
-          } else if (response.statusCode === 200) {
+          } else (!error) {
             resolve(JSON.parse(body).name);
           }
         });
