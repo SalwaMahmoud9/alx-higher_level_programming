@@ -7,8 +7,10 @@ request.get(url, function (error, response, body) {
     const c = [];
     characters.forEach(ch => {
       c.push(new Promise((resolve, reject) => {
-        request.get(ch, function (error, res, body) {
-          if (!error) {
+        request.get(ch, function (err, res, body) {
+          if (err) {
+            reject(err);
+          } else if (res.statusCode === 200) {
             resolve(JSON.parse(body).name);
           }
         });
