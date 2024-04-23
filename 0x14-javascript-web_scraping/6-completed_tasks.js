@@ -11,7 +11,7 @@ request(process.argv[2], function (error, response, body) {
         if (completed[todos[i].userId] === undefined) {
           completed[todos[i].userId] = 1;
         } else {
-          completed[ztodos[i].userId] += 1;
+          completed[todos[i].userId] += 1;
         }
       }
     }
