@@ -1,11 +1,13 @@
 #!/usr/bin/node
 const request = require('request');
+const dict1 = {};
 
-request(process.argv[2], function (error, response, body) {
-  if (!error) {
+request(process.argv[2], function (error, data, body) {
+  if (error) {
+    console.log(error);
+  } else {
     const todos = JSON.parse(body);
-    const dict1 = {};
-    
+
     for (let i = 0; i < todos.length; i++) {
       if (todos[i].completed === true) {
         if (dict1[todos[i].userId] === undefined) {
