@@ -8,10 +8,10 @@ request.get(url, function (error, response, body) {
     characters.forEach(ch => {
       arr.push(new Promise((resolve, reject) => {
         request.get(ch, function (error, response, body) {
-          if (error) {
-            reject(error);
-          } else if (!error) {
+          if (!error) {
             resolve(JSON.parse(body).name);
+          } else if (error) {
+            reject(error);
           }
         });
       }));
