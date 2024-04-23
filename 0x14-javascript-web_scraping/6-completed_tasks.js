@@ -3,9 +3,7 @@ const request = require('request');
 const dict1 = {};
 
 request(process.argv[2], function (error, data, body) {
-  if (error) {
-    console.log(error);
-  } else {
+  if (!error) {
     const todos = JSON.parse(body);
 
     for (let i = 0; i < todos.length; i++) {
