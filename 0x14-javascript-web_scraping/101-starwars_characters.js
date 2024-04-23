@@ -4,9 +4,9 @@ const url = 'https://swapi-api.alx-tools.com/api/films/' + process.argv[2];
 request.get(url, function (error, response, body) {
   if (!error) {
     const characters = JSON.parse(body).characters;
-    const l = [];
+    const arr = [];
     characters.forEach(ch => {
-      l.push(new Promise((resolve, reject) => {
+      arr.push(new Promise((resolve, reject) => {
         request.get(ch, function (err, res, body) {
           if (err) {
             reject(err);
@@ -16,7 +16,7 @@ request.get(url, function (error, response, body) {
         });
       }));
     });
-    Promise.all(l).then(names => {
+    Promise.all(arr).then(names => {
       names.forEach(name => console.log(name));
     });
   }
