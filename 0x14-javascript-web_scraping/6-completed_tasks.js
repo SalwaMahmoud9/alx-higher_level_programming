@@ -1,21 +1,20 @@
 #!/usr/bin/node
 const request = require('request');
+
 request(process.argv[2], function (error, response, body) {
   if (!error) {
     const todos = JSON.parse(body);
-    let completed = {};
+    const dict1 = {};
     
-  
     for (let i = 0; i < todos.length; i++) {
       if (todos[i].completed === true) {
-        if (completed[todos[i].userId] === undefined) {
-          completed[todos[i].userId] = 1;
+        if (dict1[todos[i].userId] === undefined) {
+          dict1[todos[i].userId] = 1;
         } else {
-          completed[todos[i].userId] += 1;
+          dict1[todos[i].userId] += 1;
         }
       }
     }
-  
-    console.log(completed);
   }
+  console.log(dict1);
 });
