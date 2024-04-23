@@ -10,7 +10,7 @@ request.get(url, function (error, response, body) {
         request.get(ch, function (error, response, body) {
           if (error) {
             reject(error);
-          } else (!error) {
+          } else if (!error) {
             resolve(JSON.parse(body).name);
           }
         });
