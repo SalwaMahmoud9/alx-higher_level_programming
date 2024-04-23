@@ -3,10 +3,10 @@ const request = require('request');
 const url = 'https://swapi-api.alx-tools.com/api/films/' + process.argv[2];
 request.get(url, function (error, response, body) {
   if (!error) {
-    const characters = JSON.parse(body).characters;
-    const c = [];
-    characters.forEach(ch => {
-      c.push(new Promise((resolve, reject) => {
+    const list = JSON.parse(body).characters;
+    const l = [];
+    list.forEach(ch => {
+      l.push(new Promise((resolve, reject) => {
         request.get(ch, function (err, res, body) {
           if (err) {
             reject(err);
